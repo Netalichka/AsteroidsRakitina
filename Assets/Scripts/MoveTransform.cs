@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace Asteroids
 {
-internal sealed class MoveTransform :IMove
+internal class MoveTransform :IMove
 {
         private readonly Transform _transform;
         //private readonly float _speed;
         private Vector3 _move;
-        public float Speed { get; protected set; }
+        public float Speed {get; protected set;}
 
         public MoveTransform(Transform transform, float speed)
         {

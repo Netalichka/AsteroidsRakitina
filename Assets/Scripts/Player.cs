@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
+
 
 namespace Asteroids
 {
@@ -16,12 +18,17 @@ namespace Asteroids
         private Camera _camera;
         //private Vector3 _move;
 
-        private IMove _moveTransform;
-        private IRotation _rotation;
+        //private IMove _moveTransform;
+        //private IRotation _rotation;
+
+        private Ship _ship;
 
         private void Start()
         {
-            _moveTransform = new AccelerationMove(transform, _speed, _acceleration);
+            _camera = Camera.main;
+           var moveTransform = new AccelerationMove(transform, _speed, _acceleration);
+            var rotation = new RotationShip(transform);
+            _ship = new Ship(moveTransform, rotation);
         }
 
 
@@ -29,22 +36,25 @@ namespace Asteroids
     {
             //var deltaTime = Time.deltaTime;
             //var speed = deltaTime * _speed;
-            _moveTransform.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") * Time.deltaTime);
+            var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
+            //_rotation.Rotation(direction);
+            _ship.Rotation(direction);
+            _ship.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") * Time.deltaTime);
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                if(_moveTransform is AccelerationMove accelerationMove)
-                {
-                    accelerationMove.AddAcceleration();
-                }
+                //if(_moveTransform is AccelerationMove accelerationMove)
+                //{
+                   _ship.AddAcceleration();
+                //}
             }
 
             if (Input.GetKeyUp(KeyCode.LeftShift))
             {
-                if (_moveTransform is AccelerationMove accelerationMove)
-                {
-                    accelerationMove.RemoveAcceleration();
-                }
+                //if (_moveTransform is AccelerationMove accelerationMove)
+                //{
+                    _ship.RemoveAcceleration();
+                //}
             }
 
             //transform.localPosition += _move;
