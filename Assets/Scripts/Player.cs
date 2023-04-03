@@ -12,9 +12,12 @@ namespace Asteroids
         [SerializeField] private Transform _barrel;
         [SerializeField] private Rigidbody2D _bullet;
         [SerializeField] private float _force;
+
+        private Camera _camera;
         //private Vector3 _move;
 
         private IMove _moveTransform;
+        private IRotation _rotation;
 
         private void Start()
         {
