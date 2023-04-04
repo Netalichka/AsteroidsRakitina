@@ -240,7 +240,7 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
+  m_Color: {r: 0.9901405, g: 1, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
@@ -427,6 +427,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1789230427450429667, guid: 46346afd55c780d4abd2a8152f4954ac, type: 3}
+      propertyPath: field of view
+      value: 55
+      objectReference: {fileID: 0}
     - target: {fileID: 1952252264861130278, guid: 46346afd55c780d4abd2a8152f4954ac, type: 3}
       propertyPath: m_Sprite
       value: 
