@@ -39,7 +39,7 @@ namespace Asteroids
             var direction = Input.mousePosition - _camera.WorldToScreenPoint(transform.position);
             //_rotation.Rotation(direction);
             _ship.Rotation(direction);
-            _ship.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") * Time.deltaTime);
+            //_ship.Move(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical") * Time.deltaTime);
 
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
