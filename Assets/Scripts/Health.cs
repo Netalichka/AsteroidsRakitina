@@ -5,10 +5,10 @@ using UnityEngine;
 namespace Asteroids
 {
 
-internal sealed class Health : MonoBehaviour
+public class Health : MonoBehaviour
 {
-        public float Max(get;)
-        public float Current(get; private set;)
+        public float Max { get; }
+        public float Current { get; private set; }
         public Health(float max, float current)
         {
             Max = max;

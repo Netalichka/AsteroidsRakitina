@@ -5,9 +5,10 @@ using UnityEngine;
 namespace Asteroids
 {
 
-public interface IEnemyFactory 
-{
+    public interface IEnemyFactory
+    {
         Enemy Create(Health hp);
-}
+       
+    }
 }
 

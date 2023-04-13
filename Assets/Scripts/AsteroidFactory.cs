@@ -9,7 +9,7 @@ namespace Asteroids
     {
         public Enemy Create(Health hp)
         {
-            var enemy = Object.Instantiate(Resources.Load<Enemy_Asteroid>("Enemy/Enemy_Asteroid"));
+            var enemy = Object.Instantiate(Resources.Load<Enemy_Asteroid>("Enemies/Enemy_Asteroid"));
             enemy.DependencyInjectHealth(hp);
             return enemy;
         }
