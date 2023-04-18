@@ -11,6 +11,10 @@ namespace Asteroids.Decorator
         private IAmmunition _bullet;
         private float _force;
         private AudioClip _audioClip;
+        private IAmmunition ammunition;
+        private Transform barrelPosition;
+        private AudioSource audioSource;
+        private AudioClip audioClip;
         private readonly AudioSource _audioSource;
 
         public Weapon(IAmmunition bullet, Transform barrelPosition, AudioSource audioSource, AudioClip audioClip, float forse)
@@ -21,6 +25,14 @@ namespace Asteroids.Decorator
             _audioSource = audioSource;
             _audioClip = audioClip;
 
+        }
+
+        public Weapon(IAmmunition ammunition, Transform barrelPosition, AudioSource audioSource, AudioClip audioClip)
+        {
+            this.ammunition = ammunition;
+            this.barrelPosition = barrelPosition;
+            this.audioSource = audioSource;
+            this.audioClip = audioClip;
         }
 
         public void SetBarrelPosition(Transform barrelPosition)
