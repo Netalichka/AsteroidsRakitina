@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using MVVM.Model;
 using System;
+using MVVM.ViewModel;
+using UnityEngine.UI;
 
 namespace MVVM.ViewModel
 {
@@ -12,6 +14,7 @@ namespace MVVM.ViewModel
         private bool _isDead;
         public event Action<float> OnHpChange;
         public IHpModel HpModel { get; }
+        public bool IsDead => _isDead;
 
         public HpViewModel(IHpModel hpModel)
         {
@@ -21,7 +24,7 @@ namespace MVVM.ViewModel
         public void ApplyDamage(float damage)
         {
             HpModel.CurrentHp -= damage;
-            if(HpModel.CurrentHp <= 0)
+            if (HpModel.CurrentHp <= 0)
             {
                 _isDead = true;
             }
