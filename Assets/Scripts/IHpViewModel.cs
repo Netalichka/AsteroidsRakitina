@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using MVVM.Model;
 using System;
+using MVVM.ViewModel;
 
 namespace MVVM.ViewModel
 {
